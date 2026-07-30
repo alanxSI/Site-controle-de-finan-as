@@ -3,6 +3,55 @@
 }
 
 .caixa{
-    background-color: rgb(226, 161, 77);
+    background-color: rgb(231, 172, 90);
     border: solid 1px rgb(0, 0, 0);
+    padding-left: 10px;
+    border-radius: 10px;
+}
+
+.botao{
+    background-color: rgb(231, 172, 90);
+    height: 6vh;
+}
+
+.movimentacao{
+    width: 90%;
+    max-height: 35vh;
+    overflow-y: auto;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid #0c0808;
+    border-radius: 10px;
+}
+
+.movimento{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #080606;
+}
+
+.date{
+    font-size: 14px;
+    color: rgb(255, 254, 254);
+}
+
+.info p{
+    margin: 0;
+}
+
+.descricao{
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.valor{
+    font-size: 20px;
+}
+
+#botaomovimento{
+    background-color: rgb(248, 244, 239);
+    border-radius: 10px;
 }
