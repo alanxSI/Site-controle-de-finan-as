@@ -11,11 +11,13 @@
     border: solid 1px rgb(0, 0, 0);
     padding-left: 10px;
     border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .botao{
     background-color: rgb(238, 235, 230);
     height: 6vh;
+    margin-top: 10px;
 }
 
 .date{
@@ -101,3 +103,18 @@ section{
    margin: 0;
 }
 /*-------------------------------------------------------------*/
+/*===================================
+            METAS
+===================================*/
+
+.meta{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+.meta div{
+    border-left: 1px solid rgb(0, 0, 0);
+    padding-left: 10px;
+}
