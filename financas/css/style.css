@@ -1,3 +1,7 @@
+/*========================================
+                GERAL
+========================================*/
+
 .fundo{
     background-color: rgb(253, 200, 130);
 }
@@ -10,27 +14,8 @@
 }
 
 .botao{
-    background-color: rgb(231, 172, 90);
+    background-color: rgb(238, 235, 230);
     height: 6vh;
-}
-
-.movimentacao{
-    width: 90%;
-    max-height: 35vh;
-    overflow-y: auto;
-    margin: auto;
-    padding: 10px;
-    border: 1px solid #0c0808;
-    border-radius: 10px;
-}
-
-.movimento{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 12px;
-    margin-bottom: 8px;
-    border-bottom: 1px solid #080606;
 }
 
 .date{
@@ -51,7 +36,55 @@
     font-size: 20px;
 }
 
+.barranavegacao{
+    display: flex;
+    justify-content: space-between;
+}
+
+section{
+    display: none;
+}
+
+#inicio{
+    display: block;
+}
+/*-------------------------------------------------------------*/
+/*=================================
+           INICIO       
+===================================*/
+
+#saldomes{
+    width: 95%;
+    height: 47vh;
+}
+
 #botaomovimento{
     background-color: rgb(248, 244, 239);
     border-radius: 10px;
 }
+
+.movimentacao{
+    width: 90%;
+    max-height: 35vh;
+    overflow-y: auto;
+    margin: auto;
+    padding: 10px;
+    border: 1px solid #0c0808;
+    border-radius: 10px;
+}
+
+.movimento{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #080606;
+}
+/*---------------------------------------------------------------*/
+/*===================================
+            CATEGORIAS
+==================================*/
+
+
+/*-------------------------------------------------------------*/

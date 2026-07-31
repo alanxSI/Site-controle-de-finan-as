@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en' class='fundo'>
+<html lang='en'>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,70 +7,100 @@
     <link rel='stylesheet' href='css\style.css'>
     <link rel='stylesheet' href='css\dashboard.css'>
 </head>
-<header>
-    <button class='botao' id='botaoinicio'>início</button>
-    <button class='botao' id='botaocategorias'>categorias</button>
-    <button class='botao' id='botaometas'>metas</button>
-    <button class='botao' id='botaorelatorios'>relatórios</button>
-    <button class='botao' id='botaoconfiguracao'>config</button>
-</header>
-<header>
-    <h1>INÍCIO</h1>
-</header>
-<div class="caixa" id="saldomes">
-    <h2>Saldo do mês:</h2>
-    <p>R$ 0,00</p>
-    <h2>Receitas:</h2>
-    <p>R$ 0,00</p>
-    <h2>Despesas:</h2>
-    <p>R$ 0,00</p>
-    <h2>Economizado:</h2>
-    <p>R$ 0,00</p>
-</div>
-<p></p>
-<div class="caixa">
-    <h2>Lista de movimentações:</h2>
-    <p>hoje</p>
-    <div class="caixa movimentacao">
-        <div class="movimento">
-            <div class="info">
-                <p class="descricao">mercado</p>
-                <p class="date">00/00/0000</p>
-            </div>
-            <span class="valor">R$ 0,00</span>
+<body  class='fundo'>  
+    <header>
+        <div class="barranavegacao">
+            <button class='botao' id='botaoinicio'>início</button>
+            <button class='botao' id='botaocategorias'>categorias</button>
+            <button class='botao' id='botaometas'>metas</button>
+            <button class='botao' id='botaorelatorios'>relatórios</button>
+            <button class='botao' id='botaoconfiguracoes'>config</button>
         </div>
-        <div class="movimento">
-            <div class="info">
-                <p class="descricao">gasolina</p>
-                <p class="date">00/00/0000</p>
+    </header>
+
+    <main>
+        <section id="inicio">
+            <header>
+                <h1>INÍCIO</h1>
+            </header>
+            <div class="caixa" id="saldomes">
+                <h2>Saldo do mês:</h2>
+                <p>R$ 0,00</p>
+                <h2>Receitas:</h2>
+                <p>R$ 0,00</p>
+                <h2>Despesas:</h2>
+                <p>R$ 0,00</p>
+                <h2>Economizado:</h2>
+                <p>R$ 0,00</p>
             </div>
-            <span class="valor">R$ 0,00</span>
-        </div>
-        <div class="movimento">
-            <div class="info">
-                <p class="descricao">salário</p>
-                <p class="date">00/00/0000</p>
+            <p></p>
+            <div class="caixa">
+                <h2>Lista de movimentações:</h2>
+                <h3>Hoje</h3>
+                <div class="caixa movimentacao">
+                    <div class="movimento">
+                        <div class="info">
+                            <p class="descricao">mercado</p>
+                            <p class="date">00/00/0000</p>
+                        </div>
+                        <span class="valor">R$ 0,00</span>
+                    </div>
+                    <div class="movimento">
+                        <div class="info">
+                            <p class="descricao">gasolina</p>
+                            <p class="date">00/00/0000</p>
+                        </div>
+                        <span class="valor">R$ 0,00</span>
+                    </div>
+                    <div class="movimento">
+                        <div class="info">
+                            <p class="descricao">salário</p>
+                            <p class="date">00/00/0000</p>
+                        </div>
+                        <span class="valor">R$ 0,00</span>
+                    </div>
+                    <div class="movimento">
+                        <div class="info">
+                            <p class="descricao">viagem</p>
+                            <p class="date">00/00/0000</p>
+                        </div>
+                        <span class="valor">R$ 0,00</span>
+                    </div>
+                    <div class="movimento">
+                        <div class="info">
+                            <p class="descricao">doação</p>
+                            <p class="date">00/00/0000</p>
+                        </div>
+                        <span class="valor">R$ 0,00</span>
+                    </div>
+                </div>
+                <P></P>
+                <button class="botao" id="botaomovimento">+ NOVA MOVIMENTAÇÃO</button>
+                <P></P>
             </div>
-            <span class="valor">R$ 0,00</span>
-        </div>
-        <div class="movimento">
-            <div class="info">
-                <p class="descricao">viagem</p>
-                <p class="date">00/00/0000</p>
-            </div>
-            <span class="valor">R$ 0,00</span>
-        </div>
-        <div class="movimento">
-            <div class="info">
-                <p class="descricao">doação</p>
-                <p class="date">00/00/0000</p>
-            </div>
-            <span class="valor">R$ 0,00</span>
-        </div>
-    </div>
-    <P></P>
-    <button class="botao" id="botaomovimento">+ NOVA MOVIMENTAÇÃO</button>
-    <P></P>
-</div>
-<script src='js\script.js'></script>
+        </section>
+        <section id="categorias">
+            <header>
+                <h1>CATEGORIAS</h1>
+            </header>
+        </section>
+        <section id="metas">
+            <header>
+                <h1>METAS</h1>
+            </header>
+        </section>
+        <section id="relatorios">
+            <header>
+                <h1>RELATÓRIOS</h1>
+            </header>
+        </section>
+        <section id="configuracoes">
+            <header>
+                <h1>CONFIGURAÇÕES</h1>
+            </header>
+        </section>
+    </main>
+    <script src='js\script.js'></script>
+</body>
+
 </html>
