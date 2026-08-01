@@ -88,7 +88,7 @@
                         <span class="valor">R$ 0,00</span>
                     </div>
                     <p class="descricao"><span>0</span> movimentações</p>
-                    <button>ver detalhes</button>
+                    <button id="botaodetalhesalimentacao">ver detalhes</button>
                 </div>
                 <div class="caixa categoria">
                     <div class="cabecalho">
@@ -96,7 +96,7 @@
                         <span class="valor">R$ 0,00</span>
                     </div>
                     <p class="descricao"><span>0</span> movimentações</p>
-                    <button>ver detalhes</button>
+                    <button id="botaodetalhestransporte">ver detalhes</button>
                 </div>
                 <div class="caixa categoria">
                     <div class="cabecalho">
@@ -104,7 +104,7 @@
                         <span class="valor">R$ 0,00</span>
                     </div>
                     <p class="descricao"><span>0</span> movimentações</p>
-                    <button>ver detalhes</button>
+                    <button id="botaodetalheslazer">ver detalhes</button>
                 </div>
                 <div class="caixa categoria">
                     <div class="cabecalho">
@@ -112,7 +112,7 @@
                         <span class="valor">R$ 0,00</span>
                     </div>
                     <p class="descricao"><span>0</span> movimentações</p>
-                    <button>ver detalhes</button>
+                    <button id="botaodetalhessaude">ver detalhes</button>
                 </div>
                 <div class="caixa categoria">
                     <div class="cabecalho">
@@ -120,7 +120,7 @@
                         <span class="valor">R$ 0,00</span>
                     </div>
                     <p class="descricao"><span>0</span> movimentações</p>
-                    <button>ver detalhes</button>
+                    <button id="botaodetalhesestudos">ver detalhes</button>
                 </div>
                 <div class="caixa categoria">
                     <div class="cabecalho">
@@ -128,7 +128,7 @@
                         <span class="valor">R$ 0,00</span>
                     </div>
                     <p class="descricao"><span>0</span> movimentações</p>
-                    <button>ver detalhes</button>
+                    <button id="botaodetalhesselfcare">ver detalhes</button>
                 </div>
 
             </div>
@@ -151,8 +151,9 @@
                             <span class="valor">R$ 0,00</span>
                         </div>
                     </div>
-                    <div>
+                    <div class="progresso">
                         <p>///////////////mmmmm 99%</p>
+                        <button id="botaoadicionardinheiromoto">+ $</button>
                     </div>
                 </div>
                 <div class="caixa">
@@ -167,8 +168,9 @@
                             <span class="valor">R$ 0,00</span>
                         </div>
                     </div>
-                    <div>
+                    <div class="progresso">
                         <p>///////////////mmmmm 99%</p>
+                        <button id="botaoadicionardinheironotebook">+ $</button>
                     </div>
                 </div>
             </div>
@@ -200,10 +202,15 @@
                     <option value="estudos">Estudos</option>
                     <option value="selfcare">Self Care</option>
                 </select>
+                <p>
+                    <p class="descricao">Tipo:</p>
+                    <input type="checkbox" name="tipo" id="tipo">Receita
+                    <input type="checkbox" name="tipo" id="tipo">Despesa
+                </p>
                 <p class="descricao">Descrição:</p>
                 <input type="text"name="descricao">
                 <p class="descricao">Valor:</p>
-                <input type="number" name="valor">
+                <input type="number" step="0.01" name="valor">
                 <p class="descricao">Data:</p>
                 <input type="date" name="data">
             </div>
@@ -212,13 +219,233 @@
         </section>
         <!--NOVA CATEGORIA-->
         <section id="novacategoria">
-            <button class="botao botaovoltar" id="botaovoltarcategoria"><img src="img/seta.png" alt=""></button>
-            <h2>Nova Categoria</h2>
+            <div class="barranavegacaodados">
+                <button class="botao botaovoltar" id="botaovoltarcategoria"><img src="img/seta.png" alt=""></button>
+                <h2>Nova Categoria</h2>
+            </div>
+            <div class="caixa">
+                <p class="descricao">Nome:</p>
+                <input type="text" name="nomecategoria">
+                <p class="descricao">Ícone:</p>
+                <select name="icone" id="icone">
+                    <option value="alimentacao">asd</option>
+                    <option value="transporte">das</option>
+                </select>
+                <p class="descricao">Cor:</p>
+                <select name="cor" id="cor">
+                    <option value="vermelho">vermelho</option>
+                    <option value="azul">azul</option>
+                    <option value="verde">verde</option>
+                    <option value="amarelo">amarelo</option>    
+                </select>
+            </div>
+            <button class="botaosalvar"><img class="imgsalvar" src="img\botaosalvar.png" alt=""></button>
         </section>
         <!--NOVA META-->
         <section id="novameta">
-            <button class="botao botaovoltar" id="botaovoltarmeta"><img src="img/seta.png" alt=""></button>
-            <h2>Nova Meta</h2>
+            <div class="barranavegacaodados">
+                <button class="botao botaovoltar" id="botaovoltarmeta"><img src="img/seta.png" alt=""></button>
+                <h2>Nova Meta</h2>
+            </div>
+            <div class="caixa">
+                <p class="descricao">Nome:</p>
+                <input type="text" name="nomemeta">
+                <p class="descricao">Valor:</p>
+                <input type="number" step="0.01" name="valormeta">
+            </div>
+            <button class="botaosalvar"><img class="imgsalvar" src="img\botaosalvar.png" alt=""></button>
+        </section>
+        <!--DETALHES CATEGORIA-->
+        <section id="detalhesalimentacao">
+            <div class="caixa">
+                <div class="barranavegacaodados">
+                    <button class="botao botaovoltar" id="botaovoltardetalhesalimentacao"><img src="img/seta.png" alt=""></button>
+                    <h2>Alimentação</h2>
+                </div>
+                <div>
+                    <p class="descricao">Total gasto:</p>
+                    <span class="valor">R$ 0,00</span>
+                    <p class="descricao"><span>2</span> movimentações</p>
+                </div>
+                <div class="caixa movimentacao" id="movimentacaocategoria">
+                    <div class="movimento">
+                        <div class="info">
+                            <p class="descricao">mercado</p>
+                            <p class="date">00/00/0000</p>
+                        </div>
+                        <span class="valor">R$ 0,00</span>
+                    </div>
+                    <div class="movimento">
+                        <div class="info">
+                            <p class="descricao">coxinha</p>
+                            <p class="date">00/00/0000</p>
+                        </div>
+                        <span class="valor">R$ 0,00</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section id="detalhestransporte">
+            <div class="caixa">
+                <div class="barranavegacaodados">
+                    <button class="botao botaovoltar" id="botaovoltardetalhestransporte"><img src="img/seta.png" alt=""></button>
+                    <h2>Transporte</h2>
+                </div>
+                <div>
+                    <p class="descricao">Total gasto:</p>
+                    <span class="valor">R$ 0,00</span>
+                    <p class="descricao"><span>2</span> movimentações</p>
+                </div>
+                <div class="caixa movimentacao">
+                    <div class="movimento">
+                        <div class="info">
+                            <p class="descricao">trabalho</p>
+                            <p class="date">00/00/0000</p>
+                        </div>
+                        <span class="valor">R$ 0,00</span>
+                    </div>
+                    <div class="movimento">
+                        <div class="info">
+                            <p class="descricao">gasolina</p>
+                            <p class="date">00/00/0000</p>
+                        </div>
+                        <span class="valor">R$ 0,00</span>
+                    </div>
+                </div>                
+            </div>
+        </section>
+        <section id="detalheslazer">
+            <div class="caixa">
+                <div class="barranavegacaodados">
+                    <button class="botao botaovoltar" id="botaovoltardetalheslazer"><img src="img/seta.png" alt=""></button>
+                    <h2>Lazer</h2>
+                </div>
+                <div>
+                    <p class="descricao">Total gasto:</p>
+                    <span class="valor">R$ 0,00</span>
+                    <p class="descricao"><span>2</span> movimentações</p>
+                </div>
+                <div class="caixa movimentacao">
+                    <div class="movimento">
+                        <div class="info">
+                            <p class="descricao">livro</p>
+                            <p class="date">00/00/0000</p>
+                        </div>
+                        <span class="valor">R$ 0,00</span>
+                    </div>
+                    <div class="movimento">
+                        <div class="info">
+                            <p class="descricao">festa</p>
+                            <p class="date">00/00/0000</p>
+                        </div>
+                        <span class="valor">R$ 0,00</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="detalhessaude">
+            <div class="caixa">
+                <div class="barranavegacaodados">
+                    <button class="botao botaovoltar" id="botaovoltardetalhessaude"><img src="img/seta.png" alt=""></button>
+                    <h2>Saúde</h2>
+                </div>
+                <div>
+                    <p class="descricao">Total gasto:</p>
+                    <span class="valor">R$ 0,00</span>
+                    <p class="descricao"><span>1</span> movimentações</p>
+                </div>
+                <div class="caixa movimentacao">
+                    <div class="movimento">
+                        <div class="info">
+                            <p class="descricao">paracetamol</p>
+                            <p class="date">00/00/0000</p>
+                        </div>
+                        <span class="valor">R$ 0,00</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="detalhesestudos">
+            <div class="caixa">
+                <div class="barranavegacaodados">
+                    <button class="botao botaovoltar" id="botaovoltardetalhesestudos"><img src="img/seta.png" alt=""></button>
+                    <h2>Estudos</h2>
+                </div>
+                <div>
+                    <p class="descricao">Total gasto:</p>
+                    <span class="valor">R$ 0,00</span>
+                    <p class="descricao"><span>1</span> movimentações</p>
+                </div>
+                <div class="caixa movimentacao">
+                    <div class="movimento">
+                        <div class="info">
+                            <p class="descricao">materiais</p>
+                            <p class="date">00/00/0000</p>
+                        </div>
+                        <span class="valor">R$ 0,00</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="detalhesselfcare">
+            <div class="caixa">
+                <div class="barranavegacaodados">
+                    <button class="botao botaovoltar" id="botaovoltardetalhesselfcare"><img src="img/seta.png" alt=""></button>
+                    <h2>Self Care</h2>
+                </div>
+                <div>
+                    <p class="descricao">Total gasto:</p>
+                    <span class="valor">R$ 0,00</span>
+                    <p class="descricao"><span>3</span> movimentações</p>
+                </div>
+                <div class="caixa movimentacao">
+                    <div class="movimento">
+                        <div class="info">
+                            <p class="descricao">sabonete facial</p>
+                            <p class="date">00/00/0000</p>
+                        </div>
+                        <span class="valor">R$ 0,00</span>
+                    </div>
+                    <div class="movimento">
+                        <div class="info">
+                            <p class="descricao">hidratante</p>
+                            <p class="date">00/00/0000</p>
+                        </div>
+                        <span class="valor">R$ 0,00</span>
+                    </div>
+                    <div class="movimento">
+                        <div class="info">
+                            <p class="descricao">shampoo</p>
+                            <p class="date">00/00/0000</p>
+                        </div>
+                        <span class="valor">R$ 0,00</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--ADICIONAR DINHEIRO NA META-->
+        <section id="adicionardinheiromoto">
+            <div class="barranavegacaodados">
+                <button class="botao botaovoltar" id="botaovoltardinheiromoto"><img src="img/seta.png" alt=""></button>
+                <h2>Adicionar Dinheiro</h2>
+            </div>
+            <div class="caixa">
+                <p class="descricao">Valor:</p>
+                <input type="number" step="0.01" name="valormeta">
+            </div>
+            <button class="botaosalvar"><img class="imgsalvar" src="img\botaosalvar.png" alt=""></button>
+        </section>
+        <section id="adicionardinheironotebook">
+            <div class="barranavegacaodados">
+                <button class="botao botaovoltar" id="botaovoltardinheironotebook"><img src="img/seta.png" alt=""></button>
+                <h2>Adicionar Dinheiro</h2>
+            </div>
+            <div class="caixa">
+                <p class="descricao">Valor:</p>
+                <input type="number" step="0.01" name="valormeta">
+            </div>
+            <button class="botaosalvar"><img class="imgsalvar" src="img\botaosalvar.png" alt=""></button>
         </section>
     </main>
     <script src='js\script.js'></script>

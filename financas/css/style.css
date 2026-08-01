@@ -9,7 +9,8 @@
 .caixa{
     background-color: rgb(231, 172, 90);
     border: solid 1px rgb(0, 0, 0);
-    padding: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
     border-radius: 10px;
     margin-bottom: 10px;
 }
@@ -156,6 +157,11 @@ section{
 .cabecalho p{
    margin: 0;
 }
+
+#movimentacaocategoria{
+    max-height: 55vh;
+}
+
 /*-------------------------------------------------------------*/
 /*===================================
             METAS
@@ -171,4 +177,12 @@ section{
 .meta div{
     border-left: 1px solid rgb(0, 0, 0);
     padding-left: 10px;
+}
+
+.progresso{
+    padding: 10px;
+}
+
+.progresso button{
+    height: 4vh;
 }
