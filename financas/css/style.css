@@ -162,6 +162,21 @@ section{
     max-height: 55vh;
 }
 
+.botaovermais{
+    height: 4vh;
+    width: 8vh;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.imgvermais{
+    height: 4vh;
+    display: block;
+}
+
 /*-------------------------------------------------------------*/
 /*===================================
             METAS
@@ -184,5 +199,14 @@ section{
 }
 
 .progresso button{
-    height: 4vh;
+    height: 6vh;
+    border-radius: 10px;
+    background-color: rgb(229, 192, 135);
+    border-color: rgb(238, 208, 162);
 }
+
+.progresso button img{
+    height: 5vh;
+    display: block;
+}
+
