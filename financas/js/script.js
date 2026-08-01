@@ -69,7 +69,7 @@ botaonovamovimentacao.onclick = function() {
 botaovoltarmovimento.onclick = function() {
     novamovimentacao.style.display = 'none';
     inicio.style.display = 'block';
-    barranavegacao.style.display = 'block';
+    barranavegacao.style.display = 'block flex';
 }
 
 /*NOVA CATEGORIA*/
@@ -85,7 +85,7 @@ botaonovacategoria.onclick = function() {
 botaovoltarcategoria.onclick = function() {
     novacategoria.style.display = 'none';
     categorias.style.display = 'block';
-    barranavegacao.style.display = 'block';
+    barranavegacao.style.display = 'block flex';
 }
 
 /*NOVA META*/
@@ -101,5 +101,5 @@ botaonovameta.onclick = function() {
 botaovoltarmeta.onclick = function() {
     novameta.style.display = 'none';
     metas.style.display = 'block';
-    barranavegacao.style.display = 'block';
+    barranavegacao.style.display = 'block flex';
 }

@@ -186,9 +186,29 @@
         </section>
         <!--NOVA MOVIMENTACAO-->
         <section id="novamovimentacao">
-            <button class="botao" id="botaovoltarmovimento">VOLTAR</button>
-            <h2>Nova Movimentação</h2>
-
+            <div class="barranavegacaodados">
+                <button class="botao botaovoltar" id="botaovoltarmovimento">VOLTAR</button>
+                <h2>Nova Movimentação</h2>
+            </div>
+            <div class="caixa">
+                <p class="descricao">Categoria:</p>
+                <select name="categoria" id="categoria">
+                    <option value="alimentacao">Alimentação</option>
+                    <option value="transporte">Transporte</option>
+                    <option value="lazer">Lazer</option>
+                    <option value="saude">Saúde</option>
+                    <option value="estudos">Estudos</option>
+                    <option value="selfcare">Self Care</option>
+                </select>
+                <p class="descricao">Descrição:</p>
+                <input type="text"name="descricao">
+                <p class="descricao">Valor:</p>
+                <input type="number" name="valor">
+                <p class="descricao">Data:</p>
+                <input type="date" name="data">
+            </div>
+            <button class="botaosalvar">SALVAR</button>
+            
         </section>
         <!--NOVA CATEGORIA-->
         <section id="novacategoria">

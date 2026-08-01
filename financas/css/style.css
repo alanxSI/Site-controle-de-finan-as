@@ -9,7 +9,7 @@
 .caixa{
     background-color: rgb(231, 172, 90);
     border: solid 1px rgb(0, 0, 0);
-    padding-left: 10px;
+    padding: 10px;
     border-radius: 10px;
     margin-bottom: 10px;
 }
@@ -50,6 +50,15 @@ section{
 #inicio{
     display: block;
 }
+
+.barranavegacaodados{
+    display: flex;
+}
+
+.botaovoltar{
+    margin-right: 10px;
+}
+
 /*-------------------------------------------------------------*/
 /*=================================
            INICIO       
@@ -83,6 +92,9 @@ section{
     margin-bottom: 8px;
     border-bottom: 1px solid #080606;
 }
+
+/*NOVA MOVIMENTACAO*/
+
 /*---------------------------------------------------------------*/
 /*===================================
             CATEGORIAS
