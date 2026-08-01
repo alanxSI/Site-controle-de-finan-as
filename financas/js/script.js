@@ -1,3 +1,5 @@
+/*------------------BOTOES DE NAVEGACAO-----------------*/
+
 var botaocategorias = document.getElementById('botaocategorias');
 var botaoinicio = document.getElementById('botaoinicio');
 var botaometas = document.getElementById('botaometas');
@@ -50,3 +52,54 @@ botaoconfiguracoes.onclick = function() {
     inicio.style.display = 'none';
 }
 
+/*-------------BOTOES DE ADICIONAR DADOS-----------------*/
+
+var barranavegacao = document.getElementById('barranavegacao');
+
+/*NOVA MOVIMENTACAO*/
+var botaonovamovimentacao = document.getElementById('botaomovimento');
+var botaovoltarmovimento = document.getElementById('botaovoltarmovimento');
+
+botaonovamovimentacao.onclick = function() {
+    inicio.style.display = 'none';
+    novamovimentacao.style.display = 'block';
+    barranavegacao.style.display = 'none';
+}
+
+botaovoltarmovimento.onclick = function() {
+    novamovimentacao.style.display = 'none';
+    inicio.style.display = 'block';
+    barranavegacao.style.display = 'block';
+}
+
+/*NOVA CATEGORIA*/
+var botaonovacategoria = document.getElementById('botaonovacategoria');
+var botaovoltarcategoria = document.getElementById('botaovoltarcategoria');
+
+botaonovacategoria.onclick = function() {
+    categorias.style.display = 'none';
+    novacategoria.style.display = 'block';
+    barranavegacao.style.display = 'none';
+}
+
+botaovoltarcategoria.onclick = function() {
+    novacategoria.style.display = 'none';
+    categorias.style.display = 'block';
+    barranavegacao.style.display = 'block';
+}
+
+/*NOVA META*/
+var botaonovameta = document.getElementById('botaonovameta');
+var botaovoltarmeta = document.getElementById('botaovoltarmeta');
+
+botaonovameta.onclick = function() {
+    metas.style.display = 'none';
+    novameta.style.display = 'block';
+    barranavegacao.style.display = 'none';
+}
+
+botaovoltarmeta.onclick = function() {
+    novameta.style.display = 'none';
+    metas.style.display = 'block';
+    barranavegacao.style.display = 'block';
+}
