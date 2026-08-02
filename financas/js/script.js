@@ -246,6 +246,7 @@ const movimentacaosalva = document.getElementById('movimentacaosalva');
 const listamovimentacao = document.getElementById('listamovimentacao');
 const receita = document.getElementById('receita');
 const despesa = document.getElementById('despesa');
+const saldo = document.getElementById('saldo');
 
 function salvanoinicio() {
     const card = document.createElement("div");
@@ -262,7 +263,11 @@ function salvanoinicio() {
     info.appendChild(date);
     const valor = document.createElement("span");
     valor.className = "valor";
-    valor.textContent = `R$ ${valormovimento.value}`;
+    if (receita.checked) {
+        valor.textContent = `R$ ${valormovimento.value}`;
+    } else if (despesa.checked) {
+        valor.textContent = `- R$ ${valormovimento.value}`;
+    }
     card.appendChild(info);
     card.appendChild(valor);
     listamovimentacao.appendChild(card);
@@ -280,6 +285,18 @@ function confirmarmovimento() {
     setTimeout(function() {
         movimentacaosalva.style.display = 'none';
     }, 2000);
+}
+
+function atualizarsaldo() {
+    let total = 0;
+    for (let movimentacao of movimentacoes) {
+        if (movimentacao.tipo == "receita") {
+            total += parseFloat(movimentacao.valor);
+        } else if (movimentacao.tipo == "despesa") {
+            total -= parseFloat(movimentacao.valor);
+        }
+    }
+    saldo.textContent = `R$ ${total}`;
 }
 
 let movimentacoes = [];
@@ -309,6 +326,7 @@ botaosalvarmovimento.onclick = function() {
     tipo: tipo
     };
     movimentacoes.push(movimentacao);
+    atualizarsaldo();
     console.log(movimentacoes);
     salvanoinicio();
     limparcampos();
