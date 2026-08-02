@@ -338,7 +338,7 @@ definircategorias();
 let movimentacoes = [];
 botaosalvarmovimento.onclick = function() {
     if(
-        categoriamovimento.value == "" //
+        selectcategoria.value == "" //
         || descricaomovimento.value == ""
         || valormovimento.value == ""
         || datamovimento.value == ""
@@ -350,7 +350,7 @@ botaosalvarmovimento.onclick = function() {
 
     const tipo = lettipo();
     const movimentacao = {
-    categoria: categoriamovimento.value,
+    categoria: selectcategoria.value,
     descricao: descricaomovimento.value,
     valor: valormovimento.value,
     data: parseFloat(datamovimento.value),
