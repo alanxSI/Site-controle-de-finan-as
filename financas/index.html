@@ -36,42 +36,8 @@
             <div class="caixa">
                 <h2>Lista de movimentações:</h2>
                 <h3>Hoje</h3>
-                <div class="caixa movimentacao">
-                    <div class="movimento">
-                        <div class="info">
-                            <p class="descricao">mercado</p>
-                            <p class="date">00/00/0000</p>
-                        </div>
-                        <span class="valor">R$ 0,00</span>
-                    </div>
-                    <div class="movimento">
-                        <div class="info">
-                            <p class="descricao">gasolina</p>
-                            <p class="date">00/00/0000</p>
-                        </div>
-                        <span class="valor">R$ 0,00</span>
-                    </div>
-                    <div class="movimento">
-                        <div class="info">
-                            <p class="descricao">salário</p>
-                            <p class="date">00/00/0000</p>
-                        </div>
-                        <span class="valor">R$ 0,00</span>
-                    </div>
-                    <div class="movimento">
-                        <div class="info">
-                            <p class="descricao">viagem</p>
-                            <p class="date">00/00/0000</p>
-                        </div>
-                        <span class="valor">R$ 0,00</span>
-                    </div>
-                    <div class="movimento">
-                        <div class="info">
-                            <p class="descricao">doação</p>
-                            <p class="date">00/00/0000</p>
-                        </div>
-                        <span class="valor">R$ 0,00</span>
-                    </div>
+                <div class="caixa movimentacao" id="listamovimentacao">
+
                 </div>
                 <button class="botaonovo" id="botaomovimento"><img src="img/botaonovamovimentacao.png" alt=""></button>
                 <P></P>
@@ -204,8 +170,10 @@
                 </select>
                 <p>
                     <p class="descricao">Tipo:</p>
-                    <input type="checkbox" name="tipo" id="tiporeceita">Receita
-                    <input type="checkbox" name="tipo" id="tipodespesa">Despesa
+                    <input type="radio" name="tipo" value="receita" id="receita">
+                    <label for="receita">Receita</label>
+                    <input type="radio" name="tipo" value="despesa" id="despesa">
+                    <label for="despesa">Despesa</label>
                 </p>
                 <p class="descricao">Descrição:</p>
                 <input id="descricaomovimento" type="text" name="descricao">

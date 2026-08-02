@@ -243,6 +243,44 @@ const descricaomovimento = document.getElementById('descricaomovimento');
 const valormovimento = document.getElementById('valormovimento');
 const datamovimento = document.getElementById('datamovimento');
 const movimentacaosalva = document.getElementById('movimentacaosalva');
+const listamovimentacao = document.getElementById('listamovimentacao');
+const receita = document.getElementById('receita');
+const despesa = document.getElementById('despesa');
+
+function salvanoinicio() {
+    const card = document.createElement("div");
+    card.className = "movimento";
+    const info = document.createElement("div");
+    info.className = "info";
+    const descricao = document.createElement("p");
+    descricao.className = "descricao";
+    descricao.textContent = descricaomovimento.value;
+    const date = document.createElement("p");
+    date.className = "date";
+    date.textContent = datamovimento.value;
+    info.appendChild(descricao);
+    info.appendChild(date);
+    const valor = document.createElement("span");
+    valor.className = "valor";
+    valor.textContent = `R$ ${valormovimento.value}`;
+    card.appendChild(info);
+    card.appendChild(valor);
+    listamovimentacao.appendChild(card);
+}
+
+function limparcampos() {
+    categoriamovimento.value = '';
+    descricaomovimento.value = '';
+    valormovimento.value = '';
+    datamovimento.value = '';
+}
+
+function confirmarmovimento() {
+    movimentacaosalva.style.display = 'block';
+    setTimeout(function() {
+        movimentacaosalva.style.display = 'none';
+    }, 2000);
+}
 
 let movimentacoes = [];
 
@@ -252,26 +290,29 @@ botaosalvarmovimento.onclick = function() {
         || descricaomovimento.value == ""
         || valormovimento.value == ""
         || datamovimento.value == ""
+        || (!receita.checked && !despesa.checked)
     ) {
         alert("Preencha todos os campos.");
         return;
+    }
+    let tipo;
+    if(receita.checked) {
+        tipo = "receita";
+    } else if(despesa.checked) {
+        tipo = "despesa";
     }
     const movimentacao = {
     categoria: categoriamovimento.value,
     descricao: descricaomovimento.value,
     valor: valormovimento.value,
-    data: parseFloat(datamovimento.value)
+    data: parseFloat(datamovimento.value),
+    tipo: tipo
     };
     movimentacoes.push(movimentacao);
     console.log(movimentacoes);
-    categoriamovimento.value = '';
-    descricaomovimento.value = '';
-    valormovimento.value = '';
-    datamovimento.value = '';
-    movimentacaosalva.style.display = 'block';
-    setTimeout(function() {
-        movimentacaosalva.style.display = 'none';
-    }, 2000);
+    salvanoinicio();
+    limparcampos();
+    confirmarmovimento();
 }
 
 
