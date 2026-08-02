@@ -159,15 +159,6 @@
                 <h2>Nova Movimentação</h2>
             </div>
             <div class="caixa">
-                <p class="descricao">Categoria:</p>
-                <select name="categoria" id="categoriamovimento">
-                    <option value="alimentacao">Alimentação</option>
-                    <option value="transporte">Transporte</option>
-                    <option value="lazer">Lazer</option>
-                    <option value="saude">Saúde</option>
-                    <option value="estudos">Estudos</option>
-                    <option value="selfcare">Self Care</option>
-                </select>
                 <p>
                     <p class="descricao">Tipo:</p>
                     <input type="radio" name="tipo" value="receita" id="receita">
@@ -175,6 +166,8 @@
                     <input type="radio" name="tipo" value="despesa" id="despesa">
                     <label for="despesa">Despesa</label>
                 </p>
+                <p class="descricao">Categoria:</p>
+                <select name="categoria" id="selectcategoria"></select>
                 <p class="descricao">Descrição:</p>
                 <input id="descricaomovimento" type="text" name="descricao">
                 <p class="descricao">Valor:</p>

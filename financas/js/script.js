@@ -238,15 +238,26 @@ botaovoltardinheironotebook.onclick = function() {
 
 /*NOVA MOVIMENTAÇÃO */
 var botaosalvarmovimento = document.getElementById('botaosalvarmovimento');
-const categoriamovimento = document.getElementById('categoriamovimento');
 const descricaomovimento = document.getElementById('descricaomovimento');
 const valormovimento = document.getElementById('valormovimento');
 const datamovimento = document.getElementById('datamovimento');
 const movimentacaosalva = document.getElementById('movimentacaosalva');
 const listamovimentacao = document.getElementById('listamovimentacao');
+const saldo = document.getElementById('saldo');
 const receita = document.getElementById('receita');
 const despesa = document.getElementById('despesa');
-const saldo = document.getElementById('saldo');
+const selectcategoria = document.getElementById('selectcategoria');
+const categoriamovimento = [
+    {nome: "Alimentação", tipo: "despesa"},
+    {nome: "Transporte", tipo: "despesa"},
+    {nome: "Lazer", tipo: "despesa"},
+    {nome: "Saúde", tipo: "despesa"},
+    {nome: "Estudos", tipo: "despesa"},
+    {nome: "Self Care", tipo: "despesa"},
+    {nome: "Salário", tipo: "receita"},
+    {nome: "Freelance", tipo: "receita"},
+    {nome: "Presente", tipo: "receita"}
+]
 
 function salvanoinicio() {
     const card = document.createElement("div");
@@ -299,8 +310,32 @@ function atualizarsaldo() {
     saldo.textContent = `R$ ${total}`;
 }
 
-let movimentacoes = [];
+function lettipo(){
+    if(receita.checked){
+        return "receita";
+    }else if(despesa.checked){
+        return "despesa";
+    }
+}
 
+function definircategorias() {
+    const tipo = lettipo()
+    selectcategoria.innerHTML = "";
+    for (let i of categoriamovimento) {
+        if (i.tipo == tipo) {
+            const opcao = document.createElement("option");
+            opcao.value = i.nome;
+            opcao.textContent = i.nome;
+            selectcategoria.appendChild(opcao);
+        }
+    }
+}
+
+receita.addEventListener("change", definircategorias);
+despesa.addEventListener("change", definircategorias);
+definircategorias();
+
+let movimentacoes = [];
 botaosalvarmovimento.onclick = function() {
     if(
         categoriamovimento.value == "" //
@@ -312,12 +347,8 @@ botaosalvarmovimento.onclick = function() {
         alert("Preencha todos os campos.");
         return;
     }
-    let tipo;
-    if(receita.checked) {
-        tipo = "receita";
-    } else if(despesa.checked) {
-        tipo = "despesa";
-    }
+
+    const tipo = lettipo();
     const movimentacao = {
     categoria: categoriamovimento.value,
     descricao: descricaomovimento.value,
@@ -332,11 +363,3 @@ botaosalvarmovimento.onclick = function() {
     limparcampos();
     confirmarmovimento();
 }
-
-
-
-
-
-
-
-
