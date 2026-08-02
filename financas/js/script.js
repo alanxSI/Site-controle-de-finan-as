@@ -231,3 +231,53 @@ botaovoltardinheironotebook.onclick = function() {
     metas.style.display = 'block';
     barranavegacao.style.display = 'block flex';
 }
+
+/*-------------------------------------------------------------
+                      DADOS                                   
+-------------------------------------------------------------*/
+
+/*NOVA MOVIMENTAÇÃO */
+var botaosalvarmovimento = document.getElementById('botaosalvarmovimento');
+const categoriamovimento = document.getElementById('categoriamovimento');
+const descricaomovimento = document.getElementById('descricaomovimento');
+const valormovimento = document.getElementById('valormovimento');
+const datamovimento = document.getElementById('datamovimento');
+const movimentacaosalva = document.getElementById('movimentacaosalva');
+
+let movimentacoes = [];
+
+botaosalvarmovimento.onclick = function() {
+    if(
+        categoriamovimento.value == "" //
+        || descricaomovimento.value == ""
+        || valormovimento.value == ""
+        || datamovimento.value == ""
+    ) {
+        alert("Preencha todos os campos.");
+        return;
+    }
+    const movimentacao = {
+    categoria: categoriamovimento.value,
+    descricao: descricaomovimento.value,
+    valor: valormovimento.value,
+    data: parseFloat(datamovimento.value)
+    };
+    movimentacoes.push(movimentacao);
+    console.log(movimentacoes);
+    categoriamovimento.value = '';
+    descricaomovimento.value = '';
+    valormovimento.value = '';
+    datamovimento.value = '';
+    movimentacaosalva.style.display = 'block';
+    setTimeout(function() {
+        movimentacaosalva.style.display = 'none';
+    }, 2000);
+}
+
+
+
+
+
+
+
+
