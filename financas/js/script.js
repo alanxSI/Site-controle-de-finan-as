@@ -246,6 +246,8 @@ const listamovimentacao = document.getElementById('listamovimentacao');
 const saldo = document.getElementById('saldo');
 const receita = document.getElementById('receita');
 const despesa = document.getElementById('despesa');
+const novareceita = document.getElementById('novareceita');
+const novadespesa = document.getElementById('novadespesa');
 const selectcategoria = document.getElementById('selectcategoria');
 const categoriamovimento = [
     {nome: "Alimentação", tipo: "despesa"},
@@ -274,14 +276,14 @@ function salvanoinicio() {
     info.appendChild(date);
     const valor = document.createElement("span");
     valor.className = "valor";
-    if (receita.checked) {
+    if (novareceita.checked) {
         valor.textContent = `R$ ${valormovimento.value}`;
-    } else if (despesa.checked) {
+    } else if (novadespesa.checked) {
         valor.textContent = `- R$ ${valormovimento.value}`;
     }
     card.appendChild(info);
     card.appendChild(valor);
-    listamovimentacao.appendChild(card);
+    listamovimentacao.prepend(card);
 }
 
 function limparcampos() {
@@ -300,20 +302,26 @@ function confirmarmovimento() {
 
 function atualizarsaldo() {
     let total = 0;
+    let totaldespesa = 0;
+    let totalreceita = 0;
     for (let movimentacao of movimentacoes) {
         if (movimentacao.tipo == "receita") {
             total += parseFloat(movimentacao.valor);
+            totalreceita += parseFloat(movimentacao.valor);
+            receita.textContent = `R$ ${totalreceita}`;
         } else if (movimentacao.tipo == "despesa") {
             total -= parseFloat(movimentacao.valor);
+            totaldespesa += parseFloat(movimentacao.valor);
+            despesa.textContent = `R$ ${totaldespesa}`;
         }
     }
     saldo.textContent = `R$ ${total}`;
 }
 
 function lettipo(){
-    if(receita.checked){
+    if(novareceita.checked){
         return "receita";
-    }else if(despesa.checked){
+    }else if(novadespesa.checked){
         return "despesa";
     }
 }
@@ -331,8 +339,8 @@ function definircategorias() {
     }
 }
 
-receita.addEventListener("change", definircategorias);
-despesa.addEventListener("change", definircategorias);
+novareceita.addEventListener("change", definircategorias);
+novadespesa.addEventListener("change", definircategorias);
 definircategorias();
 
 let movimentacoes = [];
@@ -342,7 +350,7 @@ botaosalvarmovimento.onclick = function() {
         || descricaomovimento.value == ""
         || valormovimento.value == ""
         || datamovimento.value == ""
-        || (!receita.checked && !despesa.checked)
+        || (!novareceita.checked && !novadespesa.checked)
     ) {
         alert("Preencha todos os campos.");
         return;
