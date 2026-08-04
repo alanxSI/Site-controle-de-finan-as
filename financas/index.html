@@ -30,13 +30,13 @@
                 <span id="receita">R$ 0</span>
                 <h2>Despesas:</h2>
                 <span id="despesa">R$ 0</span>
-                <h2>Economizado:</h2>
+                <h2>Saldo acumulado:</h2>
                 <span id="economizado">R$ 0,00</span>
             </div>
             <div class="caixa">
                 <h2>Lista de movimentações:</h2>
                 <h3>Hoje</h3>
-                <div class="caixa movimentacao" id="listamovimentacao">
+                <div class="caixa movimentacao" id="listamovimentacao"> /*cards criados por js*/
 
                 </div>
                 <button class="botaonovo" id="botaomovimento"><img src="img/botaonovamovimentacao.png" alt=""></button>
@@ -47,55 +47,7 @@
             <header>
                 <h1>CATEGORIAS</h1>
             </header>
-            <div>
-                <div class="caixa categoria">
-                    <div class="cabecalho">
-                        <p class="descricao">alimentação</p>
-                        <span class="valor">R$ 0,00</span>
-                    </div>
-                    <p class="descricao"><span>0</span> movimentações</p>
-                    <button class="botaovermais" id="botaodetalhesalimentacao"><img class="imgvermais" src="img/botaovermais.png" alt=""></button>
-                </div>
-                <div class="caixa categoria">
-                    <div class="cabecalho">
-                        <p class="descricao">transporte</p>
-                        <span class="valor">R$ 0,00</span>
-                    </div>
-                    <p class="descricao"><span>0</span> movimentações</p>
-                    <button class="botaovermais" id="botaodetalhestransporte"><img class="imgvermais" src="img/botaovermais.png" alt=""></button>
-                </div>
-                <div class="caixa categoria">
-                    <div class="cabecalho">
-                        <p class="descricao">lazer</p>
-                        <span class="valor">R$ 0,00</span>
-                    </div>
-                    <p class="descricao"><span>0</span> movimentações</p>
-                    <button class="botaovermais" id="botaodetalheslazer"><img class="imgvermais" src="img/botaovermais.png" alt=""></button>
-                </div>
-                <div class="caixa categoria">
-                    <div class="cabecalho">
-                        <p class="descricao">saúde</p>
-                        <span class="valor">R$ 0,00</span>
-                    </div>
-                    <p class="descricao"><span>0</span> movimentações</p>
-                    <button class="botaovermais" id="botaodetalhessaude"><img class="imgvermais" src="img/botaovermais.png" alt=""></button>
-                </div>
-                <div class="caixa categoria">
-                    <div class="cabecalho">
-                        <p class="descricao">estudos</p>
-                        <span class="valor">R$ 0,00</span>
-                    </div>
-                    <p class="descricao"><span>0</span> movimentações</p>
-                    <button class="botaovermais" id="botaodetalhesestudos"><img class="imgvermais" src="img/botaovermais.png" alt=""></button>
-                </div>
-                <div class="caixa categoria">
-                    <div class="cabecalho">
-                        <p class="descricao">self care</p>
-                        <span class="valor">R$ 0,00</span>
-                    </div>
-                    <p class="descricao"><span>0</span> movimentações</p>
-                    <button class="botaovermais" id="botaodetalhesselfcare"><img class="imgvermais" src="img/botaovermais.png" alt=""></button>
-                </div>
+            <div id="listacategorias"> /*cards criados por js*/
 
             </div>
             <button class="botaonovo" id="botaonovacategoria"><img src="img/botaonovacategoria.png" alt=""></button>
@@ -189,6 +141,11 @@
             <div class="caixa">
                 <p class="descricao">Nome:</p>
                 <input type="text" name="nomecategoria">
+                <p class="descricao">Tipo:</p>
+                <input type="radio" value="tiponovadespesa" name="tiponovacategoria">
+                <label for="tiponovadespesa">Despesa</label>
+                <input type="radio" name="tiponovacategoria" value="tiponovareceita">
+                <label for="tiponovareceita">Receita</label>
                 <p class="descricao">Ícone:</p>
                 <select name="icone" id="icone">
                     <option value="alimentacao">asd</option>

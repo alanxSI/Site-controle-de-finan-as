@@ -105,7 +105,7 @@ botaovoltarmeta.onclick = function() {
 }
 
 /*-------------VER DETALHES CATEGORIAS---------------------*/
-
+/*
 var botaodetalhesalimentacao = document.getElementById('botaodetalhesalimentacao');
 var detalhesalimentacao = document.getElementById('detalhesalimentacao');
 var botaovoltardetalhesalimentacao = document.getElementById('botaovoltardetalhesalimentacao');
@@ -201,7 +201,7 @@ botaovoltardetalhesselfcare.onclick = function() {
     categorias.style.display = 'block';
     barranavegacao.style.display = 'block flex';
 }
-
+*/
 /*-----------------ADICIONAR DINHEIRO NA META--------------------*/
 var botaoadicionardinheironotebook = document.getElementById('botaoadicionardinheironotebook');
 var botaoadicionardinheiromoto = document.getElementById('botaoadicionardinheiromoto');
@@ -300,7 +300,7 @@ function confirmarmovimento() {
     }, 2000);
 }
 
-function atualizarsaldo() {
+function atualizarresumo() {  /*atualiza saldo, despesa e receita*/
     let total = 0;
     let totaldespesa = 0;
     let totalreceita = 0;
@@ -316,6 +316,21 @@ function atualizarsaldo() {
         }
     }
     saldo.textContent = `R$ ${total}`;
+}
+
+/*muita coisa pra mexer aqui*/
+function atualizarcategoria(){
+    let total = 0;
+    let num_movimentacao = 0;
+    for (let movimentacao of movimentacoes){
+        for (let i of categoriamovimento){
+            if (i.nome == movimentacao.categoria){
+                total += parseFloat(movimentacao.valor);
+                num_movimentacao += 1;
+                
+            }
+        }
+    }
 }
 
 function lettipo(){
@@ -365,9 +380,50 @@ botaosalvarmovimento.onclick = function() {
     tipo: tipo
     };
     movimentacoes.push(movimentacao);
-    atualizarsaldo();
+    atualizarresumo();
     console.log(movimentacoes);
     salvanoinicio();
     limparcampos();
     confirmarmovimento();
+}
+
+const listacategorias = document.getElementById('listacategorias');
+
+function criarcardscategorias(){
+    for (let i of categoriamovimento){
+    const card = document.createElement("div");
+    card.dataset.categoria = i.nome;
+    card.className = "caixa categoria";
+    const cabecalho = document.createElement("div");
+    cabecalho.className = "cabecalho";
+    const titulo = document.createElement("p");
+    titulo.className = "descricao";
+    titulo.textContent = i.nome;
+    const totalcategoria = document.createElement("span");
+    totalcategoria.className = "valor";
+    totalcategoria.textContent = "R$ 0";
+    cabecalho.appendChild(titulo);
+    cabecalho.appendChild(totalcategoria);
+    card.appendChild(cabecalho);
+    const movimentacoestitulo = document.createElement("p");
+    movimentacoestitulo.className = "descricao";
+    const num_movimentacoes = document.createElement("span");
+    num_movimentacoes.textContent = "0"
+    movimentacoestitulo.appendChild(num_movimentacoes);
+    movimentacoestitulo.textContent = " movimentações";
+    card.appendChild(movimentacoestitulo);
+    const botaovermais = document.createElement("button");
+    botaovermais.addEventListener("click", abrirdetalhescategoria);
+    botaovermais.className = "botaovermais";
+    botaovermais.dataset.categoria = i.nome;
+    botaovermais.textContent = "ver mais";
+    card.appendChild(botaovermais);
+    listacategorias.appendChild(card);
+    } 
+}
+
+criarcardscategorias();
+
+function abrirdetalhescategoria(event){
+
 }
