@@ -104,104 +104,6 @@ botaovoltarmeta.onclick = function() {
     barranavegacao.style.display = 'block flex';
 }
 
-/*-------------VER DETALHES CATEGORIAS---------------------*/
-/*
-var botaodetalhesalimentacao = document.getElementById('botaodetalhesalimentacao');
-var detalhesalimentacao = document.getElementById('detalhesalimentacao');
-var botaovoltardetalhesalimentacao = document.getElementById('botaovoltardetalhesalimentacao');
-
-botaodetalhesalimentacao.onclick = function() {
-    categorias.style.display = 'none';
-    detalhesalimentacao.style.display = 'block';
-    barranavegacao.style.display = 'none';
-}
-
-botaovoltardetalhesalimentacao.onclick = function() {
-    detalhesalimentacao.style.display = 'none';
-    categorias.style.display = 'block';
-    barranavegacao.style.display = 'block flex';
-}
-
-var botaodetalhestransporte = document.getElementById('botaodetalhestransporte');
-var detalhestransporte = document.getElementById('detalhestransporte');
-var botaovoltardetalhestransporte = document.getElementById('botaovoltardetalhestransporte');
-
-botaodetalhestransporte.onclick = function() {
-    categorias.style.display = 'none';
-    detalhestransporte.style.display = 'block';
-    barranavegacao.style.display = 'none';
-}
-
-botaovoltardetalhestransporte.onclick = function() {
-    detalhestransporte.style.display = 'none';
-    categorias.style.display = 'block';
-    barranavegacao.style.display = 'block flex';
-}
-
-var botaodetalheslazer = document.getElementById('botaodetalheslazer');
-var detalheslazer = document.getElementById('detalheslazer');
-var botaovoltardetalheslazer = document.getElementById('botaovoltardetalheslazer'); 
-
-botaodetalheslazer.onclick = function() {
-    categorias.style.display = 'none';
-    detalheslazer.style.display = 'block';
-    barranavegacao.style.display = 'none';
-}
-
-botaovoltardetalheslazer.onclick = function() {
-    detalheslazer.style.display = 'none';
-    categorias.style.display = 'block';
-    barranavegacao.style.display = 'block flex';
-}  
-
-var botaodetalhessaude = document.getElementById('botaodetalhessaude');
-var detalhessaude = document.getElementById('detalhessaude');
-var botaovoltardetalhessaude = document.getElementById('botaovoltardetalhessaude');
-
-botaodetalhessaude.onclick = function() {
-    categorias.style.display = 'none';
-    detalhessaude.style.display = 'block';
-    barranavegacao.style.display = 'none';
-}
-
-botaovoltardetalhessaude.onclick = function() {
-    detalhessaude.style.display = 'none';
-    categorias.style.display = 'block';
-    barranavegacao.style.display = 'block flex';
-}
-
-var botaodetalhesestudos = document.getElementById('botaodetalhesestudos');
-var detalhesestudos = document.getElementById('detalhesestudos');
-var botaovoltardetalhesestudos = document.getElementById('botaovoltardetalhesestudos');
-
-botaodetalhesestudos.onclick = function() {
-    categorias.style.display = 'none';
-    detalhesestudos.style.display = 'block';
-    barranavegacao.style.display = 'none';
-}
-
-botaovoltardetalhesestudos.onclick = function() {
-    detalhesestudos.style.display = 'none';
-    categorias.style.display = 'block';
-    barranavegacao.style.display = 'block flex';
-}
-
-var botaodetalhesselfcare = document.getElementById('botaodetalhesselfcare');
-var detalhesselfcare = document.getElementById('detalhesselfcare');
-var botaovoltardetalhesselfcare = document.getElementById('botaovoltardetalhesselfcare');
-
-botaodetalhesselfcare.onclick = function() {
-    categorias.style.display = 'none';
-    detalhesselfcare.style.display = 'block';
-    barranavegacao.style.display = 'none';
-}
-
-botaovoltardetalhesselfcare.onclick = function() {
-    detalhesselfcare.style.display = 'none';
-    categorias.style.display = 'block';
-    barranavegacao.style.display = 'block flex';
-}
-*/
 /*-----------------ADICIONAR DINHEIRO NA META--------------------*/
 var botaoadicionardinheironotebook = document.getElementById('botaoadicionardinheironotebook');
 var botaoadicionardinheiromoto = document.getElementById('botaoadicionardinheiromoto');
@@ -318,7 +220,7 @@ function atualizarresumo() {  /*atualiza saldo, despesa e receita*/
     saldo.textContent = `R$ ${total}`;
 }
 
-/*muita coisa pra mexer aqui*/
+/*muita coisa pra mexer aqui
 function atualizarcategoria(){
     let total = 0;
     let num_movimentacao = 0;
@@ -332,7 +234,7 @@ function atualizarcategoria(){
         }
     }
 }
-
+*/
 function lettipo(){
     if(novareceita.checked){
         return "receita";
@@ -408,9 +310,8 @@ function criarcardscategorias(){
     const movimentacoestitulo = document.createElement("p");
     movimentacoestitulo.className = "descricao";
     const num_movimentacoes = document.createElement("span");
-    num_movimentacoes.textContent = "0"
-    movimentacoestitulo.appendChild(num_movimentacoes);
-    movimentacoestitulo.textContent = " movimentações";
+    num_movimentacoes.textContent = "0";
+    movimentacoestitulo.append(num_movimentacoes, " movimentações");
     card.appendChild(movimentacoestitulo);
     const botaovermais = document.createElement("button");
     botaovermais.addEventListener("click", abrirdetalhescategoria);
@@ -424,6 +325,80 @@ function criarcardscategorias(){
 
 criarcardscategorias();
 
-function abrirdetalhescategoria(event){
+const detalhescategoria = document.getElementById("detalhescategoria");
 
+function criardetalhescategoria(){
+    for (let i of categoriamovimento){
+        const detalhes = document.createElement("section");
+        detalhes.dataset.categoria = i.nome;
+        detalhes.className = "caixa detalhescategoria";
+        detalhescategoria.appendChild(detalhes);
+        const barrasuperior = document.createElement("div");
+        barrasuperior.className = "barranavegacaodados"
+        detalhes.appendChild(barrasuperior);
+        const botaovoltar = document.createElement("button");
+        botaovoltar.className = "botao botaovoltar";
+        botaovoltar.dataset.categoria = i.nome;
+        botaovoltar.textContent = "voltar";
+        barrasuperior.appendChild(botaovoltar);
+        const titulodetalhes = document.createElement("h2");
+        titulodetalhes.textContent = i.nome;
+        barrasuperior.appendChild(titulodetalhes);
+        const resumodetalhes = document.createElement("div");
+        detalhes.appendChild(resumodetalhes);
+        const totaltitulo = document.createElement("p");
+        totaltitulo.className = "descricao";
+        totaltitulo.textContent = "total gasto:";
+        const totalvalor = document.createElement("span");
+        totalvalor.className = "valor";
+        totalvalor.textContent = "R$ 0";
+        const movimentacoestitulo = document.createElement("p");
+        movimentacoestitulo.className = "descricao";
+        resumodetalhes.append(totaltitulo, totalvalor, movimentacoestitulo);
+        const totalmovimentacoes = document.createElement("span");
+        totalmovimentacoes.textContent  = "0";
+        movimentacoestitulo.append(totalmovimentacoes, " movimentações");
+        const movimentacoeslista = document.createElement("div");
+        movimentacoeslista.className = "caixa movimentacao movimentacao-categoria";
+        detalhes.appendChild(movimentacoeslista);
+        const card = document.createElement("div");
+        card.className = "movimento";
+        movimentacoeslista.appendChild(card);
+        const info = document.createElement("div");
+        info.className = "info";
+        card.appendChild(info);
+        const descricao = document.createElement("p");
+        descricao.className = "descricao";
+        descricao.textContent = "coxinha";
+        const date = document.createElement("p");
+        date.className = "date";
+        date.textContent = "00/00/0000";
+        info.appendChild(descricao);
+        info.appendChild(date);
+        const valor = document.createElement("span");
+        valor.className = "valor";
+        valor.textContent = "R$ 0";
+        card.appendChild(valor);
+    }
+}
+
+criardetalhescategoria();
+/*-------------VER DETALHES CATEGORIAS---------------------*/
+/*
+
+var botaovoltardetalhesalimentacao = document.getElementById('botaovoltardetalhesalimentacao');
+
+botaovoltardetalhesalimentacao.onclick = function() {
+    detalhesalimentacao.style.display = 'none';
+    categorias.style.display = 'block';
+    barranavegacao.style.display = 'block flex';
+}
+*/
+
+function abrirdetalhescategoria(event){
+    const categoria = event.target.dataset.categoria;
+    const sectiondetalhes = document.querySelector(`.detalhescategoria[data-categoria="${categoria}"]`);
+    sectiondetalhes.style.display = 'block';
+    categorias.style.display = 'none';
+    barranavegacao.style.display = 'none';
 }
